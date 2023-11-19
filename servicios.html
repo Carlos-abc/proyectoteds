@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        h1{
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+
+        }
+        img{
+
+            width: 300px;
+            
+        }
+
+        #logo{
+
+            width: 150px;
+        }
+        header{
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             padding: 10px;
+             background-color: rgb(255, 255, 255);
+             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+             border-radius: 3px;
+        }
+        header  > a{
+
+            font-size: 25px;
+            text-decoration: none;
+            font-weight: bold;
+
+            
+        }
+        button{
+
+            background-color: turquoise;
+            border: 1px solid;
+            border-radius: 3px;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0);
+
+
+        }
+        button:hover{
+            background-color: rgb(0, 172, 172);
+        }
+        .container1, .container2{
+
+            display: flex;
+            border: solid 1px black;
+
+        }
+        .content1, .content2{
+
+            flex-basis: calc(33.33% - 20px);
+            margin: 10px;
+            text-align: center;
+            border: solid 1px blue;
+        
+        }
+            
+        
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#index.html"><img id ="logo"src="ProyectoTEDS/img/logo-familydental.jpg"></a>
+        <a href="#"> Acerca de nosotros </a>
+        <a href="#"> Servicios </a>
+        <a href="#"> Chatbot </a>
+        <div>
+            <button> Registrarse </button>
+            <button style="margin: 25px;"> Iniciar Sesion </button>
+        </div>
+    </header>
+    <h1> Servicios  </h1>
+    <div class="container1">
+
+        <div class="content1">
+            <button> Brackets </button>
+            <img src="ProyectoTEDS/img/bracketsdental.jpg" alt="brackets">
+        </div>
+
+        <div class="content1">
+            <button> Coronas esteticas </button>
+            <img src="ProyectoTEDS/img/coronadental.webp" alt="coronas esteticas">
+        </div>
+
+        <div class="content1">
+            <button> Extracciones </button>
+            <img src="ProyectoTEDS/img/extracciondental.jpg">
+        </div>
+    </div>
+
+    <div class="container2">
+
+        <div class="content2">
+        <button> Limpieza Dental </button>
+        <img src="ProyectoTEDS/img/limpiezadental.jfif">
+        </div>
+
+        <div class="content2">
+        <button> Pediatria </button>
+        <img src="ProyectoTEDS/img/pediatriadental.jfif">
+        </div>
+
+        <div class="content2">
+        <button> Endodoncias </button>
+        <img src="ProyectoTEDS/img/endodonciadental.jfif">
+        </div>
+
+        <div class="content2">
+        <button> Resinas </button>
+        <img src="ProyectoTEDS/img/resinadental.jpg">
+        </div>
+
+    </div>
+
+    <footer>
+        <p> Derechos reservasdos &copy; 2020</p>
+    </footer>
+
+
+
+
+
+    
+</body>
+</html>
