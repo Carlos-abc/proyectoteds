@@ -11,18 +11,20 @@
             text-align: center;
             font-size: 40px;
             font-weight: bold;
+        }
 
+        #logoheader{
+
+            width: 150px;
         }
         img{
 
             width: 300px;
+            height: 200px;
             
         }
 
-        #logo{
 
-            width: 150px;
-        }
         header{
              display: flex;
              justify-content: space-between;
@@ -39,6 +41,11 @@
             font-weight: bold;
 
             
+        }
+
+        main img{
+        
+            border: 4px solid rgb(0, 172, 172);
         }
         button{
 
@@ -57,19 +64,35 @@
         }
         .container1, .container2{
 
+            
             display: flex;
-            border: solid 1px black;
+            /*border: solid 1px black;*/
 
         }
         .content1, .content2{
 
-            flex-basis: calc(33.33% - 20px);
+            /*border: solid 1px blue;*/
             margin: 10px;
             text-align: center;
-            border: solid 1px blue;
+            padding: 4%;
+            flex-grow: 1;
+            flex-shrink: 1;
         
         }
-            
+        footer{
+
+            margin-top: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+        .logoredes, #logofooter{
+
+            width: 40px;
+            height: 40px;
+        }
         
 
 
@@ -78,7 +101,7 @@
 </head>
 <body>
     <header>
-        <a href="#index.html"><img id ="logo"src="ProyectoTEDS/img/logo-familydental.jpg"></a>
+        <a href="#index.html"><img id ="logoheader"src="ProyectoTEDS/img/logo-familydental.jpg"></a>
         <a href="#"> Acerca de nosotros </a>
         <a href="#"> Servicios </a>
         <a href="#"> Chatbot </a>
@@ -87,51 +110,61 @@
             <button style="margin: 25px;"> Iniciar Sesion </button>
         </div>
     </header>
-    <h1> Servicios  </h1>
-    <div class="container1">
+    <main>
+        <h1> Servicios  </h1>
+        <div class="container1">
 
-        <div class="content1">
-            <button> Brackets </button>
-            <img src="ProyectoTEDS/img/bracketsdental.jpg" alt="brackets">
+            <div class="content1">
+                <button> Brackets </button>
+                <img src="ProyectoTEDS/img/servicios/bracketsdental.jpg" alt="brackets">
+            </div>
+
+            <div class="content1">
+                <button> Coronas esteticas </button>
+                <img src="ProyectoTEDS/img/servicios/coronadental.webp" alt="coronas esteticas">
+            </div>
+
+            <div class="content1">
+                <button> Extracciones </button>
+                <img src="ProyectoTEDS/img/servicios/extracciondental.jpg">
+            </div>
         </div>
 
-        <div class="content1">
-            <button> Coronas esteticas </button>
-            <img src="ProyectoTEDS/img/coronadental.webp" alt="coronas esteticas">
+        <div class="container2">
+
+            <div class="content2">
+            <button> Limpieza Dental </button>
+            <img src="ProyectoTEDS/img/servicios/limpiezadental.jfif">
+            </div>
+
+            <div class="content2">
+            <button> Pediatria </button>
+            <img src="ProyectoTEDS/img/servicios/pediatriadental.jfif">
+            </div>
+
+            <div class="content2">
+            <button> Endodoncias </button>
+            <img src="ProyectoTEDS/img/servicios/endodonciadental.png">
+            </div>
+
+            <div class="content2">
+            <button> Resinas </button>
+            <img src="ProyectoTEDS/img/servicios/resinadental.jpg">
+            </div>
+
         </div>
-
-        <div class="content1">
-            <button> Extracciones </button>
-            <img src="ProyectoTEDS/img/extracciondental.jpg">
-        </div>
-    </div>
-
-    <div class="container2">
-
-        <div class="content2">
-        <button> Limpieza Dental </button>
-        <img src="ProyectoTEDS/img/limpiezadental.jfif">
-        </div>
-
-        <div class="content2">
-        <button> Pediatria </button>
-        <img src="ProyectoTEDS/img/pediatriadental.jfif">
-        </div>
-
-        <div class="content2">
-        <button> Endodoncias </button>
-        <img src="ProyectoTEDS/img/endodonciadental.jfif">
-        </div>
-
-        <div class="content2">
-        <button> Resinas </button>
-        <img src="ProyectoTEDS/img/resinadental.jpg">
-        </div>
-
-    </div>
+    </main>
 
     <footer>
-        <p> Derechos reservasdos &copy; 2020</p>
+        <img id ="logofooter" src="ProyectoTEDS/img/familydental_footer.png">
+
+        <div>
+            <img class="logoredes" src="ProyectoTEDS/img/logos_redes_sociales/facebook.png">
+            <img class="logoredes" src="ProyectoTEDS/img/logos_redes_sociales/instagram.png">
+            <img class="logoredes" src="ProyectoTEDS/img/logos_redes_sociales/whatssapp.png">
+        </div>
+
+        <p> Numero de contacto: 664-174-11-39</p>
     </footer>
 
 
