@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+h2 {
+  font-size: 2.7em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+/*Header*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 3%;
+}
+
+.logo {
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 50px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #15a48a;
+}
+
+header a {
+  padding: 5px 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+button {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  background-color: rgb(15, 151, 133);
+}
+
+button:hover {
+  background-color: rgb(12, 133, 119);
+}
+
+.cta {
+  padding: 0px 10px;
+}
+
+/*Carrusel*/
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.Containers {
+  display: none;
+}
+
+.Back,
+.forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  width: auto;
+  margin-top: -23px;
+  padding: 17px;
+  color: rgb(49, 49, 49);
+  font-weight: bold;
+  font-size: 29px;
+  transition: 0.4s ease;
+  border-radius: 0 5px 5px 0;
+  user-select: none;
+}
+
+.forward {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.Back:hover,
+.forward:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.info {
+  color: #e3e3e3;
+  font-size: 16px;
+  padding: 10px 14px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.info {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background: linear-gradient(92.18deg, #49e9e1 -25.78%, #43dbc7 123.02%);
+  opacity: 0.3;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.enable,
+.dots:hover {
+  background: linear-gradient(92.18deg, #0b9e8a -25.78%, #23ad8b 123.02%);
+  opacity: 1;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
+.carousel-cuadro {
+  background-color: rgba(255, 255, 255, 0.67);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-acento {
+  color: rgb(15, 151, 133);
+}
+
+/*Actualizaciones seccion*/
+#actualizaciones {
+  text-align: center;
+  padding-top: 60px;
+}
+
+#actualizaciones h3 {
+  padding-bottom: 10px;
+}
+
+#actualizaciones .container {
+  padding: 60px 12px;
+  display: flex;
+}
+
+#actualizaciones .aviso-1 {
+  background-position: center center;
+  background-size: cover;
+  padding: 50px;
+  margin: 12px;
+  border-radius: 15px;
+}
+
+#actualizaciones .aviso-2 {
+  background-position: center center;
+  background-size: cover;
+  padding: 50px;
+  margin: 12px;
+  border-radius: 15px;
+}
+
+#actualizaciones .aviso-3 {
+  background-position: center center;
+  background-size: cover;
+  padding: 50px;
+  margin: 12px;
+  border-radius: 15px;
+}
+
+.aviso-1 {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("img/Dentista_4.jpg");
+}
+
+.aviso-2 {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("img/Dentista_5.jpg");
+}
+
+.aviso-3 {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("img/Dentista_1.jpg");
+}
+
+.cuadro {
+  background-color: rgba(255, 255, 255, 0.67);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/*Testimonios*/
+#testimonios {
+  text-align: center;
+}
+
+#testimonios .container {
+  background-position: center center;
+  background-size: cover;
+  padding: 50px;
+  margin: 12px;
+  border-radius: 15px;
+}
+
+/*Footer*/
+footer h3 {
+  text-align: center;
+}
+
+footer .container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.logo2 {
+  width: 40px;
+  height: 40px;
+  margin-right: auto;
+}
+
+.logoredes {
+  width: 40px;
+  height: 40px;
+}
+
+.redes-sociales {
+  display: flex;
+  align-items: center;
+  margin-left: 300px; /* Ajusta el margen izquierdo */
+}
+
+.redes-sociales img {
+  margin-right: 10px;
+}
+
+footer .container p {
+  margin-left: auto;
+}
