@@ -26,10 +26,12 @@ p {
 }
 
 /*Carrusel*/
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
+  margin-top: 100px;
 }
 
 .Containers {
@@ -220,4 +222,11 @@ p {
   padding: 50px;
   margin: 12px;
   border-radius: 15px;
+}
+
+#botonagendar:hover{
+
+  background-color: rgb(40, 133, 12);
+
+
 }
