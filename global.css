@@ -136,3 +136,7 @@ footer .container {
 footer .container p {
   margin-left: auto;
 }
+
+footer img:hover{
+  transform: scale(1.1);
+}
