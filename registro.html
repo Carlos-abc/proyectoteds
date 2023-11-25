@@ -98,6 +98,40 @@
   display: block;
   margin-top: 5px;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 30%; /* Ajusta el ancho según tus necesidades */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 16px; /* Ajusta el tamaño del botón de cierre según tus necesidades */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
     
 
 
@@ -193,15 +227,44 @@
             document.getElementById("passwordRepeatError").innerText = "";
         }
     
-        // Resto del código para enviar al servidor...
+         // Guardar el nombre de usuario en el almacenamiento local
+         localStorage.setItem('usuario', username);
+         localStorage.setItem('email', email);
+         localStorage.setItem('password', password);
+         localStorage.setItem('nombre', nombre);
+         localStorage.setItem('apellidoPaterno', apellidoPaterno);
+         localStorage.setItem('apellidoMaterno', apellidoMaterno);
         
-        console.log("Usuario registrado:");
+        /*console.log("Usuario registrado:");
         console.log("Nombre de usuario: " + username);
         console.log("Correo electrónico: " + email);
         console.log("Contraseña: " + password);
         console.log("Nombre: " + nombre);
         console.log("Apellido Paterno: " + apellidoPaterno);
-        console.log("Apellido Materno: " + apellidoMaterno);
+        console.log("Apellido Materno: " + apellidoMaterno);*/
+
+        localStorage.setItem('registroExitoso', 'true');
+
+        abrirModal();
+
+        
+    }
+
+        // Función para abrir la ventana modal
+    function abrirModal() {
+      var modal = document.getElementById('registroExitosoModal');
+      modal.style.display = 'block';
+      setTimeout(function() {
+          cerrarModal();
+          // Redirigir a la página de inicio de sesión después de 5 segundos
+          window.location.href = 'login.html';
+      }, 5000);
+    }
+
+    // Función para cerrar la ventana modal
+    function cerrarModal() {
+      var modal = document.getElementById('registroExitosoModal');
+      modal.style.display = 'none';
     }
   </script>
 
@@ -217,5 +280,13 @@
         <p>Numero de contacto: 664-174-11-39</p>
       </div>
     </footer>
+
+    <!-- Ventana modal de registro exitoso -->
+  <div id="registroExitosoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <p>¡Registro exitoso! Serás redirigido a la página de inicio de sesión en unos segundos.</p>
+    </div>
+  </div>
   </body>
 </html>
