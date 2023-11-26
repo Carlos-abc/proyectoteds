@@ -87,7 +87,7 @@ p {
   height: 16px;
   width: 16px;
   margin: 0 3px;
-  background: linear-gradient(92.18deg, #49e9e1 -25.78%, #43dbc7 123.02%);
+  background: linear-gradient(92.18deg, #5381b9 -25.78%, #3e628d 123.02%);
   opacity: 0.3;
   border-radius: 50%;
   display: inline-block;
@@ -96,7 +96,7 @@ p {
 
 .enable,
 .dots:hover {
-  background: linear-gradient(92.18deg, #0b9e8a -25.78%, #23ad8b 123.02%);
+  background: linear-gradient(92.18deg, #5381b9 -25.78%, #456a97 123.02%);
   opacity: 1;
 }
 
@@ -134,7 +134,7 @@ p {
 }
 
 .color-acento {
-  color: rgb(15, 151, 133);
+  color: #5381b9;
 }
 
 /*Actualizaciones seccion*/
@@ -224,9 +224,6 @@ p {
   border-radius: 15px;
 }
 
-#botonagendar:hover{
-
+#botonagendar:hover {
   background-color: rgb(40, 133, 12);
-
-
 }

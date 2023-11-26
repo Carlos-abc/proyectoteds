@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="global-2.css" />
+    <title>Document</title>
+    <script src="session.js"></script>
+
+    <style>
+      /*  */
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: 24px;
+      }
+
+      .chat-container {
+        width: 100%;
+        max-width: 400px;
+        height: 500px; /* Altura fija del contenedor del chat */
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .chat-header {
+        background-color: #5381b9;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .chat-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: scroll;
+      }
+
+      .message {
+        margin-bottom: 10px;
+        overflow: hidden;
+      }
+
+      .user-message {
+        background-color: #5381b9;
+        color: white;
+        border-radius: 5px;
+        padding: 8px;
+        float: right;
+        max-width: 70%; /* Limita el ancho del mensaje del usuario */
+      }
+
+      .bot-message {
+        background-color: #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        float: left;
+        max-width: 70%; /* Limita el ancho del mensaje del chatbot */
+      }
+
+      .input-container {
+        clear: both;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .chat-input {
+        width: calc(100% - 20px);
+        padding: 15px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: 10px;
+      }
+
+      .chat-submit {
+        width: calc(100% - 20px);
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #5381b9;
+        color: white;
+        border: none;
+        cursor: pointer;
+        float: left;
+      }
+
+      /* Media query para pantallas más pequeñas */
+      @media (max-width: 600px) {
+        .chat-container {
+          max-width: 100%;
+        }
+
+        .chat-input {
+          width: calc(100% - 10px);
+          margin-right: 0;
+        }
+
+        .chat-submit {
+          width: calc(100% - 10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index-2.html"
+        ><img class="logo" src="img/logo-familydental.jpg" alt="logo"
+      /></a>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="acerca-nosotros-2.html">Acerca de Nosotros</a></li>
+          <li><a href="servicios-2.html">Servicios</a></li>
+          <li><a href="chatbot-2.html">Chatbot</a></li>
+        </ul>
+      </nav>
+      <div class="botones">
+        <a class="cta" href="infocuenta.html"
+          ><button>Miguel Segoviano</button></a
+        >
+      </div>
+
+      <div id="container">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="infocuenta.html">
+              <li>Perfil</li>
+            </a>
+            <a href="">
+              <li>Agendar una cita</li>
+            </a>
+            <a href="">
+              <li>Citas</li>
+            </a>
+            <a href="index.html">
+              <li>Cerrar Sesion</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <h1>CHATBOT</h1>
+
+    <div class="chat-container">
+      <div class="chat-header">Chatbot</div>
+      <div class="chat-body" id="chatBody">
+        <!-- Aquí se mostrarán los mensajes del chat -->
+      </div>
+      <div class="input-container">
+        <input
+          type="text"
+          class="chat-input"
+          id="userInput"
+          placeholder="Escribe tu mensaje..."
+        />
+        <button class="chat-submit" onclick="sendMessage()">Enviar</button>
+      </div>
+    </div>
+
+    <script src="session.js">
+      function sendMessage() {
+        var userInput = document.getElementById("userInput").value;
+        var chatBody = document.getElementById("chatBody");
+
+        // Agregar el mensaje del usuario al cuerpo del chat
+        chatBody.innerHTML +=
+          '<div class="message"><div class="user-message">' +
+          userInput +
+          "</div></div>";
+
+        // Lógica del chatbot (aquí deberías agregar tu propia lógica)
+        var chatbotResponse = "¡Hola! Soy un chatbot.";
+
+        // Agregar la respuesta del chatbot al cuerpo del chat
+        chatBody.innerHTML +=
+          '<div class="message"><div class="bot-message">' +
+          chatbotResponse +
+          "</div></div>";
+
+        // Limpiar el campo de entrada después de enviar el mensaje
+        document.getElementById("userInput").value = "";
+
+        // Hacer scroll hacia abajo para mostrar el último mensaje
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+    </script>
+
+    <footer>
+      <h3>Contactanos</h3>
+      <div class="container">
+        <img class="logo2" src="img/familydental_footer.png" alt="Logo 2" />
+        <div class="redes-sociales">
+          <img
+            class="logoredes"
+            src="img/logos_redes_sociales/logo-fb-footer.png"
+          />
+          <img
+            class="logoredes"
+            src="img/logos_redes_sociales/logo-ig-footer.png"
+          />
+          <img
+            class="logoredes"
+            src="img/logos_redes_sociales/logo-wh-footer.png"
+          />
+        </div>
+        <p>Numero de contacto: 664-174-11-39</p>
+      </div>
+    </footer>
+  </body>
+</html>
