@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Emergente - Citas</title>
+    <style>
+        /* Estilo para la ventana emergente */
+        #ventanaEmergente {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 3%;
+            background-color: #9ac5fa;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        /* Estilo para el fondo oscuro detrás de la ventana emergente */
+        #fondoOscuro {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Estilo para los botones de selección de fecha y hora */
+        .boton {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            font-size: 14px;
+            font-weight: lighter;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            background-color: #5381b9;
+            cursor: pointer;
+        }
+          
+        button:hover {
+            background-color: rgb(12, 81, 133);
+        }
+
+        /* Estilo para las flechas de desplazamiento */
+        .flecha {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Estilo para las flechas dentro de la ventana emergente */
+        #flechasVentana {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para el botón de cierre */
+        #cerrarVentana {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 25px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        #cerrarVentana:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="mostrarSiguienteCita()">Mostrar Ventana Emergente</button>
+
+    <!-- Ventana Emergente -->
+    <div id="fondoOscuro" onclick="cerrarVentana()"></div>
+    <div id="ventanaEmergente"></div>
+
+    <script>
+        var citas = [
+            {
+                nombrePaciente: "Miguel Segoviano Sanchez",
+                servicio: "Brackets",
+                medico: "Daniel Perez",
+                fecha: "10/12/2023",
+                hora: "15:30 hrs"
+            },
+            {
+                nombrePaciente: "Otro Paciente",
+                servicio: "Limpieza Dental",
+                medico: "Ana Rodriguez",
+                fecha: "15/12/2023",
+                hora: "14:00 hrs"
+            },
+            {
+                nombrePaciente: "Otra Persona",
+                servicio: "Extracción",
+                medico: "Juan Martinez",
+                fecha: "20/12/2023",
+                hora: "10:45 hrs"
+            }
+        ];
+
+        var indiceCitaActual = 0;
+
+        function mostrarSiguienteCita() {
+            mostrarCita(indiceCitaActual);
+            indiceCitaActual = (indiceCitaActual + 1) % citas.length;
+        }
+
+        function mostrarCitaAnterior() {
+            indiceCitaActual = (indiceCitaActual - 1 + citas.length) % citas.length;
+            mostrarCita(indiceCitaActual);
+        }
+
+        function mostrarCita(indice) {
+            var fondoOscuro = document.getElementById('fondoOscuro');
+            var ventanaEmergente = document.getElementById('ventanaEmergente');
+
+            fondoOscuro.style.display = 'block';
+            ventanaEmergente.style.display = 'block';
+
+            ventanaEmergente.innerHTML = `
+                <span id="cerrarVentana" onclick="cerrarVentana()">X</span>
+                <h1>Citas</h1>
+                <p>Nombre del paciente: ${citas[indice].nombrePaciente}</p>
+                <p>Servicio: ${citas[indice].servicio}</p>
+                <p>Médico: ${citas[indice].medico}</p>
+                <p>Fecha: ${citas[indice].fecha}</p>
+                <p>Hora: ${citas[indice].hora}</p>
+                <button onclick="cancelarCita()" class="boton">Cancelar Cita</button>
+                <div id="flechasVentana" class="flechasVentana">
+                    <button class="flecha" onclick="mostrarCitaAnterior()">‹</button>
+                    <button class="flecha" onclick="mostrarSiguienteCita()">›</button>
+                </div>
+            `;
+        }
+
+        function cerrarVentana() {
+            var fondoOscuro = document.getElementById('fondoOscuro');
+            var ventanaEmergente = document.getElementById('ventanaEmergente');
+
+            fondoOscuro.style.display = 'none';
+            ventanaEmergente.style.display = 'none';
+        }
+
+        function cancelarCita() {
+            alert('Cita cancelada correctamente');
+            cerrarVentana();
+        }
+    </script>
+
+</body>
+</html>

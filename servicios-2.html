@@ -93,6 +93,89 @@
       ul {
         margin-top: 0px;
       }
+
+      #ventanaEmergente {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 3%;
+        background-color: #9ac5fa;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        text-align: center;
+    }
+
+    /* Estilo para el fondo oscuro detrás de la ventana emergente */
+    #fondoOscuro {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    /* Estilo para los iconos de los médicos */
+    .iconoMedico {
+
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .iconoMedico:hover{
+        cursor: pointer;
+        transform: scale(1.10);
+        transition: 0.5s;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+    }
+
+    /* Estilo para los botones de selección de fecha y hora */
+    .boton {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #ventanaEmergente img{
+
+      width: 70px;
+      height: 70px;
+    }
+
+    #ventanaEmergente h1{
+
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    #ventanaEmergente h2{
+
+      text-align: center;
+      font-size: 20px;
+    }
+
+    #cerrarVentana {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 50px;
+      cursor: pointer;
+      color: #333;
+  }
+
+  #cerrarVentana:hover {
+      color: red;
+  }
+
+    
     </style>
   </head>
   <body>
@@ -140,8 +223,8 @@
       <h1>SERVICIOS</h1>
       <div class="container1">
         <div class="content1">
-          <button>Brackets</button>
-          <img src="img/servicios/bracketsdental.jpg" alt="brackets" />
+          <button onclick="mostrarVentana()">Brackets</button>
+          <img onclick="mostrarVentana()" src="img/servicios/bracketsdental.jpg" alt="brackets" />
           <ul>
             <li>
               Los brackets son dispositivos utilizados en ortodoncia para
@@ -276,7 +359,51 @@
       </div>
     </main>
 
-    <script src="session.js"></script>
+    <!-- Ventana Emergente -->
+    <div class="ventanaemergente">
+      <div id="fondoOscuro" onclick="cerrarVentana()"></div>
+      <div id="ventanaEmergente">
+        <span id="cerrarVentana" onclick="cerrarVentana()">&times;</span>
+          <h1>Seleccion: Brackets</h1>
+          <br><br>
+          <h2>Selecciona al médico:</h2>
+          <br>
+
+          <!-- conos y nombres de médicos -->
+          <div class="iconoMedico">
+              <img src="img/iconopersona.jpg" alt="Icono Médico 1" width="50">
+              <p>Daniel Perez</p>
+          </div>
+
+          <div class="iconoMedico">
+              <img src="img/iconopersona.jpg" alt="Icono Médico 2" width="50">
+              <p>Rosa Amezquita</p>
+          </div>
+
+          <div class="iconoMedico">
+              <img src="img/iconopersona.jpg" alt="Icono Médico 3" width="50">
+              <p>Christina Salgado</p>
+          </div>
+
+          <div class="iconoMedico">
+              <img src="img/iconopersona.jpg" alt="Icono Médico 4" width="50">
+              <p>Pedro Hermoso</p>
+          </div>
+
+          <br>
+          <br>
+          <br>
+          <!-- Botones de selección de fecha y hora -->
+          <button class="boton">Seleccione Fecha</button>
+          <button class="boton">Seleccione Hora</button>
+
+          <br>
+          <br>
+          <br>
+          <!-- Botón para agendar cita -->
+          <button onclick="agendarCita()" class="boton">Agendar Cita</button>
+    </div>
+    
 
     <footer>
       <h3>Contactanos</h3>
@@ -299,5 +426,26 @@
         <p>Numero de contacto: 664-174-11-39</p>
       </div>
     </footer>
+
+    <script>
+
+      function mostrarVentana() {
+        // Mostrar la ventana emergente y el fondo oscuro
+        document.getElementById('ventanaEmergente').style.display = 'block';
+        document.getElementById('fondoOscuro').style.display = 'block';
+    }
+
+    function cerrarVentana() {
+      // Ocultar la ventana emergente y el fondo oscuro
+      document.getElementById('ventanaEmergente').style.display = 'none';
+      document.getElementById('fondoOscuro').style.display = 'none';
+  }
+
+    function agendarCita() {
+        // Aquí puedes agregar la lógica para agendar la cita
+        alert('Cita agendada correctamente');
+        cerrarVentana(); // Cerrar la ventana después de agendar la cita
+    }
+    </script>
   </body>
 </html>
